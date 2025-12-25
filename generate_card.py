@@ -88,9 +88,9 @@ def generate_qr_code(network_name: str, password: str) -> etree.Element:
     # Card width with 0.20 inch side margins: 123.43 units
     # QR width with scale=2: 66 units
     # Center x position: (123.43 - 66) / 2 = 28.72
-    # Position at y=165 (below password field)
+    # Position at y=180 (below password field which is at y~154, giving ~26 units gap)
     qr_x = 28.72
-    qr_y = 165
+    qr_y = 180
 
     # Extract paths from QR SVG and add to group
     # Note: segno generates paths without namespace when svgns=False
@@ -137,7 +137,7 @@ def add_instruction_text(root) -> None:
     text_element = etree.Element('text')
     text_element.set('id', 'qr-instructions')
     text_element.set('x', '61.72')  # Center horizontally (123.43 / 2)
-    text_element.set('y', '235.31')  # 0.15 inch (4.31 units) below QR code (ends at 231)
+    text_element.set('y', '250.31')  # 0.15 inch (4.31 units) below QR code (ends at 246)
     text_element.set('text-anchor', 'middle')  # Center alignment
     text_element.set('font-family', 'Arial, sans-serif')
     text_element.set('font-size', '7')
@@ -223,11 +223,12 @@ def generate_card(network_name: str, network_wifi_password: str, file_name: str)
             # Original width: 111.95, new width: 123.43
             parts[2] = '123.43'
 
-            # Change height to accommodate QR code (66 units) at y=165 plus 2 inches margin
-            # QR ends at: 165 + 66 = 231
-            # 2 inches ≈ 57.4 units (card is ~111.95 units wide = 3.9 inches, so 1 inch ≈ 28.7 units)
-            # New height: 231 + 57.4 ≈ 290
-            parts[3] = '290'
+            # Change height to accommodate QR code and instructions with margins
+            # Password field at y~154, QR at y=180, QR ends at 246
+            # Instructions at y=250.31, end at ~267
+            # 2 inches bottom margin ≈ 57.4 units
+            # New height: 267 + 57.4 ≈ 325
+            parts[3] = '325'
             root.set('viewBox', ' '.join(parts))
 
     # Generate and insert QR code
