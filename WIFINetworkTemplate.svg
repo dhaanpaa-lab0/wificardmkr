@@ -1,7 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.95 178.24">
-  <defs>
-    <style>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 111.95 178.24"
+   version="1.1"
+   sodipodi:docname="WIFINetworkTemplate.svg"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview41"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="5.6609065"
+     inkscape:cx="55.998099"
+     inkscape:cy="89.120003"
+     inkscape:window-width="3440"
+     inkscape:window-height="1262"
+     inkscape:window-x="0"
+     inkscape:window-y="31"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs1">
+    <style
+       id="style1">
       .cls-1 {
         font-family: AdobeCleanUX-Bold, 'Adobe Clean UX';
         font-weight: 700;
@@ -132,24 +162,83 @@
       }
     </style>
   </defs>
-  <g id="Generative_Object" data-name="Generative Object">
-    <g>
-      <path class="cls-11" d="M44.65,36.13l-6.17-5.94c3.51-4.44,8.01-7.82,13.2-9.94,13.87-5.85,30.42-1.96,39.87,9.97l-6.2,5.93c-5.5-6.54-13.69-9.95-22.19-9.43-7.21.54-13.86,3.83-18.52,9.41Z"/>
-      <path class="cls-11" d="M70.01,53.98c.21,2.5-1.53,4.65-3.89,5.18s-4.88-.71-5.76-2.96c-1.12-2.86.48-5.88,3.42-6.62s5.97,1.25,6.23,4.4Z"/>
+  <g
+     id="Generative_Object"
+     data-name="Generative Object"
+     transform="translate(-7.7726066,12.01221)">
+    <g
+       id="g2">
+      <path
+         class="cls-11"
+         d="m 44.65,36.13 -6.17,-5.94 c 3.51,-4.44 8.01,-7.82 13.2,-9.94 13.87,-5.85 30.42,-1.96 39.87,9.97 l -6.2,5.93 C 79.85,29.61 71.66,26.2 63.16,26.72 55.95,27.26 49.3,30.55 44.64,36.13 Z"
+         id="path1" />
+      <path
+         class="cls-11"
+         d="m 70.01,53.98 c 0.21,2.5 -1.53,4.65 -3.89,5.18 -2.36,0.53 -4.88,-0.71 -5.76,-2.96 -1.12,-2.86 0.48,-5.88 3.42,-6.62 2.94,-0.74 5.97,1.25 6.23,4.4 z"
+         id="path2" />
     </g>
-    <g>
-      <path class="cls-4" d="M73.36,46.55c-2.19-2.37-5.27-3.82-8.56-3.73s-6.41,1.7-8.44,4.25"/>
-      <path class="cls-6" d="M50.46,41.35c3.59-3.89,8.32-6.27,13.8-6.48s11.44,2,14.83,6.11"/>
-      <path class="cls-5" d="M34.05,25.08c7.34-9.04,17.1-13.82,28.6-14.72l5.14.08c11.25.18,21.46,6.05,28.3,14.74l5.93-5.83-3.69-3.98C79.17-3.08,47.16-2.05,29.52,17.81l-1.22,1.67,5.75,5.61Z"/>
+    <g
+       id="g5">
+      <path
+         class="cls-4"
+         d="m 73.36,46.55 c -2.19,-2.37 -5.27,-3.82 -8.56,-3.73 -3.29,0.09 -6.41,1.7 -8.44,4.25"
+         id="path3" />
+      <path
+         class="cls-6"
+         d="m 50.46,41.35 c 3.59,-3.89 8.32,-6.27 13.8,-6.48 5.48,-0.21 11.44,2 14.83,6.11"
+         id="path4" />
+      <path
+         class="cls-5"
+         d="m 34.05,25.08 c 7.34,-9.04 17.1,-13.82 28.6,-14.72 l 5.14,0.08 c 11.25,0.18 21.46,6.05 28.3,14.74 l 5.93,-5.83 -3.69,-3.98 C 79.17,-3.08 47.16,-2.05 29.52,17.81 l -1.22,1.67 5.75,5.61 z"
+         id="path5" />
     </g>
   </g>
-  <text class="cls-2" transform="translate(17.61 86.19)"><tspan x="0" y="0">WIFI </tspan><tspan class="cls-14" x="24.28" y="0">A</tspan><tspan class="cls-13" x="31.48" y="0">cc</tspan><tspan x="42.08" y="0">ess </tspan><tspan class="cls-23" x="60.14" y="0">D</tspan><tspan x="68.18" y="0">etails</tspan></text>
-  <g id="WifiNetworkPasswordBlock">
-    <text class="cls-1" transform="translate(.84 160.7)"><tspan class="cls-12" x="0" y="0">P</tspan><tspan class="cls-22" x="6.59" y="0">a</tspan><tspan class="cls-18" x="12.7" y="0">s</tspan><tspan class="cls-21" x="17.81" y="0">s</tspan><tspan class="cls-23" x="22.81" y="0">w</tspan><tspan x="31.74" y="0">o</tspan><tspan class="cls-27" x="38.34" y="0">rd</tspan><tspan x="49.46" y="0">:</tspan></text>
-    <text id="WifiNetworkPasswordValue" class="cls-3" transform="translate(1.9 175.36)"><tspan x="0" y="0">**</tspan><tspan class="cls-8" x="9.58" y="0">N</tspan><tspan class="cls-17" x="17.57" y="0">E</tspan><tspan class="cls-19" x="23.87" y="0">T</tspan><tspan class="cls-10" x="30.54" y="0">WORK_</tspan><tspan class="cls-15" x="68.57" y="0">P</tspan><tspan class="cls-9" x="75.26" y="0">W**</tspan></text>
-  </g>
-  <g id="WifiNetworkNameBlock">
-    <text class="cls-1" transform="translate(0 127.54)"><tspan class="cls-13" x="0" y="0">N</tspan><tspan class="cls-24" x="8.11" y="0">e</tspan><tspan class="cls-16" x="14.36" y="0">t</tspan><tspan class="cls-23" x="18.58" y="0">w</tspan><tspan x="27.5" y="0">o</tspan><tspan class="cls-25" x="34.1" y="0">r</tspan><tspan x="38.57" y="0">k </tspan><tspan class="cls-14" x="47.6" y="0">N</tspan><tspan x="55.64" y="0">am</tspan><tspan class="cls-20" x="71.79" y="0">e</tspan><tspan x="77.96" y="0">:</tspan></text>
-    <text id="WifiNetworkNameValue" class="cls-3" transform="translate(1.06 142.2)"><tspan x="0" y="0">**</tspan><tspan class="cls-26" x="9.58" y="0">S</tspan><tspan x="15.47" y="0">S</tspan><tspan class="cls-7" x="21.24" y="0">I</tspan><tspan x="24.35" y="0">D**</tspan></text>
-  </g>
+  <text
+     class="cls-2"
+     id="text10"
+     x="6.4025989"
+     y="82.744347"
+     transform="scale(0.89364967,1.1190067)"
+     style="font-size:12.0219px;stroke-width:1.55575"><tspan
+       x="6.4025989"
+       y="82.744347"
+       id="tspan5"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.0219px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:1.55575">WIFI Access Details</tspan></text>
+  <text
+     class="cls-1"
+     id="text18"
+     x="3.3131022"
+     y="142.68169"
+     style="font-weight:900;stroke:#231f20;stroke-width:0.3;paint-order:stroke fill">Password:</text>
+  <text
+     class="cls-1"
+     id="text36"
+     x="-74.369713"
+     y="113.40799"
+     style="font-weight:900;stroke:#231f20;stroke-width:0.3;paint-order:stroke fill"><tspan
+       x="3.5902843"
+       y="113.40799"
+       id="tspan36">Network Name:</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:0;stroke:#808080;stroke-width:1;stroke-dasharray:none;-inkscape-stroke:hairline"
+     x="3.356353"
+     y="124.36172"
+     id="WifiNetworkNameValue"><tspan
+       sodipodi:role="line"
+       id="tspan41"
+       x="3.356353"
+       y="124.36172"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:1;stroke:#040404;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline">NETWORK_NAME</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:0;stroke:#808080;stroke-width:1;stroke-dasharray:none;-inkscape-stroke:hairline"
+     x="3.7096534"
+     y="153.86229"
+     id="WifiNetworkPasswordValue"><tspan
+       sodipodi:role="line"
+       id="tspan42"
+       x="3.7096534"
+       y="153.86229"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:1;stroke:#040404;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline">PASSWORD</tspan></text>
 </svg>

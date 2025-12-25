@@ -3,8 +3,7 @@ import os
 import argparse
 from pathlib import Path
 from lxml import etree
-from svglib.svglib import svg2rlg
-from reportlab.graphics import renderPDF
+import cairosvg
 
 TEMPLATE_FILE = "WIFINetworkTemplate.svg"
 SVG_NS = {"svg": "http://www.w3.org/2000/svg"}
@@ -38,16 +37,38 @@ def update_text_element(root, text_element_id: str, new_text: str) -> None:
     if text_element is None:
         print(f"Text element with id '{text_element_id}' not found.")
         return
-    else:
-        # 1. Clear any text sitting directly in the parent <text> tag
+
+    # Check if there's a tspan child element
+    tspan = text_element.find("svg:tspan", namespaces=SVG_NS)
+
+    if tspan is not None:
+        # Update the tspan's text content to preserve its styling
+        # (Important: tspan contains fill-opacity:1 and proper stroke color)
+        tspan.text = new_text
+        # Clear any direct text on the parent element
         text_element.text = ""
 
-        # 2. Iterate over a COPY of the children list and remove them
-        # (We use list() to create a copy so we don't break the iterator while deleting)
+        # Set stroke:none to prevent letter bunching while keeping black fill
+        # (stroke adds extra thickness that can make characters overlap)
+        style = tspan.get('style', '')
+        if style:
+            # Remove stroke-related properties and add stroke:none
+            style_parts = [s.strip() for s in style.split(';')]
+            filtered_style = []
+            for part in style_parts:
+                if part and not any(part.startswith(x) for x in ['stroke:', 'stroke-width', 'stroke-opacity', 'stroke-dash', '-inkscape-stroke']):
+                    filtered_style.append(part)
+            # Explicitly set stroke to none
+            filtered_style.append('stroke:none')
+            tspan.set('style', ';'.join(filtered_style))
+    else:
+        # Fallback: if no tspan exists, set text directly on parent
+        text_element.text = ""
         for child in list(text_element):
             text_element.remove(child)
         text_element.text = new_text
-        print(f"Updated text element with id '{text_element_id}' to '{new_text}'.")
+
+    print(f"Updated text element with id '{text_element_id}' to '{new_text}'.")
 
 
 def generate_card(network_name: str, network_wifi_password: str, file_name: str) -> str:
@@ -85,8 +106,7 @@ def convert_to_pdf(svg_file_path: str) -> str:
     pdf_file_path = os.path.splitext(svg_file_path)[0] + ".pdf"
 
     try:
-        drawing = svg2rlg(svg_file_path)
-        renderPDF.drawToFile(drawing, pdf_file_path)
+        cairosvg.svg2pdf(url=svg_file_path, write_to=pdf_file_path)
         print(f"Generated PDF card: {pdf_file_path}")
         return pdf_file_path
     except Exception as e:
