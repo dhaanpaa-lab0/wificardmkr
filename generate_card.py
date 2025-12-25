@@ -4,6 +4,8 @@ import argparse
 from pathlib import Path
 from lxml import etree
 import cairosvg
+import segno
+from io import BytesIO
 
 TEMPLATE_FILE = "WIFINetworkTemplate.svg"
 SVG_NS = {"svg": "http://www.w3.org/2000/svg"}
@@ -30,6 +32,132 @@ def ensure_output_path(file_path: str) -> str:
 
     # Otherwise, prepend output/ directory
     return str(Path(OUTPUT_DIR) / path)
+
+
+def escape_wifi_string(text: str) -> str:
+    """Escape special characters for WiFi QR code format.
+
+    Args:
+        text: The string to escape (SSID or password)
+
+    Returns:
+        Escaped string safe for WiFi QR code format
+    """
+    # Escape in order: backslash first, then other special chars
+    text = text.replace("\\", "\\\\")
+    text = text.replace(";", "\\;")
+    text = text.replace(":", "\\:")
+    text = text.replace(",", "\\,")
+    return text
+
+
+def generate_qr_code(network_name: str, password: str) -> etree.Element:
+    """Generate WiFi QR code as SVG group element.
+
+    Args:
+        network_name: WiFi SSID
+        password: WiFi password
+
+    Returns:
+        lxml Element containing QR code as a group with paths
+    """
+    # Escape special characters
+    escaped_ssid = escape_wifi_string(network_name)
+    escaped_password = escape_wifi_string(password)
+
+    # Build WiFi QR code string (works on iOS and Android)
+    wifi_string = f"WIFI:T:WPA;S:{escaped_ssid};P:{escaped_password};;"
+
+    # Generate QR code with high error correction
+    qr = segno.make(wifi_string, error='h')
+
+    # Generate SVG output with smaller scale for more compact QR code
+    buffer = BytesIO()
+    qr.save(buffer, kind='svg', scale=2, border=0, xmldecl=False, svgns=False)
+    buffer.seek(0)
+
+    # Parse the generated SVG
+    qr_svg = etree.parse(buffer)
+    qr_root = qr_svg.getroot()
+
+    # Create a group element for the QR code
+    qr_group = etree.Element('g')
+    qr_group.set('id', 'qr-code')
+
+    # Calculate positioning (centered horizontally at bottom of card)
+    # Card width with 0.20 inch side margins: 123.43 units
+    # QR width with scale=2: 66 units
+    # Center x position: (123.43 - 66) / 2 = 28.72
+    # Position at y=165 (below password field)
+    qr_x = 28.72
+    qr_y = 165
+
+    # Extract paths from QR SVG and add to group
+    # Note: segno generates paths without namespace when svgns=False
+    for path in qr_root.findall('.//path'):
+        # Clone the path element with its attributes
+        new_path = etree.Element('path')
+
+        # Copy the path data
+        if path.get('d'):
+            new_path.set('d', path.get('d'))
+
+        # Copy transform if present
+        if path.get('transform'):
+            new_path.set('transform', path.get('transform'))
+
+        # Set stroke (segno uses stroke, not fill)
+        new_path.set('stroke', '#000000')
+        new_path.set('fill', 'none')
+
+        # Copy stroke width if present, otherwise set default
+        stroke_width = path.get('stroke-width')
+        if stroke_width:
+            new_path.set('stroke-width', stroke_width)
+
+        qr_group.append(new_path)
+
+    # Add transform for positioning
+    qr_group.set('transform', f'translate({qr_x}, {qr_y})')
+
+    return qr_group
+
+
+def add_instruction_text(root) -> None:
+    """Add instructional text below the QR code.
+
+    Args:
+        root: The SVG root element
+    """
+    # Card dimensions with 0.20 inch side margins
+    # Original width: 111.95, side margins: 5.74 each, new width: 123.43
+    card_width = 123.43
+
+    # Create text element for instructions
+    text_element = etree.Element('text')
+    text_element.set('id', 'qr-instructions')
+    text_element.set('x', '61.72')  # Center horizontally (123.43 / 2)
+    text_element.set('y', '235.31')  # 0.15 inch (4.31 units) below QR code (ends at 231)
+    text_element.set('text-anchor', 'middle')  # Center alignment
+    text_element.set('font-family', 'Arial, sans-serif')
+    text_element.set('font-size', '7')
+    text_element.set('fill', '#000000')  # Black text
+
+    # Create tspan for the instructional text
+    tspan = etree.Element('tspan')
+    tspan.set('x', '61.72')
+    tspan.set('dy', '0')
+    tspan.text = 'To quickly join this network, scan the QR code'
+    text_element.append(tspan)
+
+    # Create second line
+    tspan2 = etree.Element('tspan')
+    tspan2.set('x', '61.72')
+    tspan2.set('dy', '9')  # Line spacing
+    tspan2.text = 'with your iOS or Android device'
+    text_element.append(tspan2)
+
+    root.append(text_element)
 
 
 def update_text_element(root, text_element_id: str, new_text: str) -> None:
@@ -85,6 +213,30 @@ def generate_card(network_name: str, network_wifi_password: str, file_name: str)
 
     update_text_element(root, "WifiNetworkNameValue", network_name)
     update_text_element(root, "WifiNetworkPasswordValue", network_wifi_password)
+
+    # Extend viewBox to accommodate QR code with margins
+    viewBox = root.get('viewBox')
+    if viewBox:
+        parts = viewBox.split()
+        if len(parts) == 4:
+            # Add 0.20 inch (5.74 units) side margins on each side
+            # Original width: 111.95, new width: 123.43
+            parts[2] = '123.43'
+
+            # Change height to accommodate QR code (66 units) at y=165 plus 2 inches margin
+            # QR ends at: 165 + 66 = 231
+            # 2 inches ≈ 57.4 units (card is ~111.95 units wide = 3.9 inches, so 1 inch ≈ 28.7 units)
+            # New height: 231 + 57.4 ≈ 290
+            parts[3] = '290'
+            root.set('viewBox', ' '.join(parts))
+
+    # Generate and insert QR code
+    qr_group = generate_qr_code(network_name, network_wifi_password)
+    root.append(qr_group)
+    print(f"Generated WiFi QR code")
+
+    # Add instructional text below QR code
+    add_instruction_text(root)
 
     tree.write(file_name, pretty_print=True, xml_declaration=True, encoding="utf-8")
     print(f"Generated SVG card: {file_name}")

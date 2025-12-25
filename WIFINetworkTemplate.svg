@@ -221,7 +221,7 @@
        id="tspan36">Network Name:</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:0;stroke:#808080;stroke-width:1;stroke-dasharray:none;-inkscape-stroke:hairline"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:'Courier New', Consolas, Monaco, 'Liberation Mono', monospace;-inkscape-font-specification:'Courier New Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:0;stroke:#808080;stroke-width:1;stroke-dasharray:none;-inkscape-stroke:hairline"
      x="3.356353"
      y="124.36172"
      id="WifiNetworkNameValue"><tspan
@@ -229,10 +229,10 @@
        id="tspan41"
        x="3.356353"
        y="124.36172"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:1;stroke:#040404;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline">NETWORK_NAME</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New', Consolas, Monaco, 'Liberation Mono', monospace;-inkscape-font-specification:'Courier New';vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:1;stroke:#040404;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline">NETWORK_NAME</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:0;stroke:#808080;stroke-width:1;stroke-dasharray:none;-inkscape-stroke:hairline"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:'Courier New', Consolas, Monaco, 'Liberation Mono', monospace;-inkscape-font-specification:'Courier New Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:0;stroke:#808080;stroke-width:1;stroke-dasharray:none;-inkscape-stroke:hairline"
      x="3.7096534"
      y="153.86229"
      id="WifiNetworkPasswordValue"><tspan
@@ -240,5 +240,5 @@
        id="tspan42"
        x="3.7096534"
        y="153.86229"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:1;stroke:#040404;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline">PASSWORD</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New', Consolas, Monaco, 'Liberation Mono', monospace;-inkscape-font-specification:'Courier New';vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:1;stroke:#040404;stroke-width:1;stroke-dasharray:none;stroke-opacity:1;-inkscape-stroke:hairline">PASSWORD</tspan></text>
 </svg>
