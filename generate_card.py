@@ -147,14 +147,14 @@ def add_instruction_text(root) -> None:
     tspan = etree.Element('tspan')
     tspan.set('x', '61.72')
     tspan.set('dy', '0')
-    tspan.text = 'To quickly join this network, scan the QR code'
+    tspan.text = 'Scan QR code to connect'
     text_element.append(tspan)
 
     # Create second line
     tspan2 = etree.Element('tspan')
     tspan2.set('x', '61.72')
     tspan2.set('dy', '9')  # Line spacing
-    tspan2.text = 'with your iOS or Android device'
+    tspan2.text = 'Works with iOS & Android'
     text_element.append(tspan2)
 
     root.append(text_element)
