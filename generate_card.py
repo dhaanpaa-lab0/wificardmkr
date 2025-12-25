@@ -137,7 +137,7 @@ def add_instruction_text(root) -> None:
     text_element = etree.Element('text')
     text_element.set('id', 'qr-instructions')
     text_element.set('x', '61.72')  # Center horizontally (123.43 / 2)
-    text_element.set('y', '250.31')  # 0.15 inch (4.31 units) below QR code (ends at 246)
+    text_element.set('y', '316.31')  # 0.15 inch (4.31 units) below QR code (ends at 312)
     text_element.set('text-anchor', 'middle')  # Center alignment
     text_element.set('font-family', 'Arial, sans-serif')
     text_element.set('font-size', '7')
@@ -224,11 +224,11 @@ def generate_card(network_name: str, network_wifi_password: str, file_name: str)
             parts[2] = '123.43'
 
             # Change height to accommodate QR code and instructions with margins
-            # Password field at y~154, QR at y=180, QR ends at 246
-            # Instructions at y=250.31, end at ~267
+            # Password field at y~154, QR at y=180 with scale(2) making it 132 units tall
+            # QR ends at 312, instructions at y=316.31, text ends at ~333
             # 2 inches bottom margin ≈ 57.4 units
-            # New height: 267 + 57.4 ≈ 325
-            parts[3] = '325'
+            # New height: 333 + 57.4 ≈ 390
+            parts[3] = '390'
             root.set('viewBox', ' '.join(parts))
 
     # Generate and insert QR code
