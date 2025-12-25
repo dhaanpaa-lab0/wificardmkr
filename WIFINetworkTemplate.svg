@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.95 178.24">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: AdobeCleanUX-Bold, 'Adobe Clean UX';
+        font-weight: 700;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #231f20;
+        font-size: 12px;
+      }
+
+      .cls-4 {
+        stroke: #617e67;
+      }
+
+      .cls-4, .cls-5 {
+        stroke-linecap: round;
+      }
+
+      .cls-4, .cls-5, .cls-6 {
+        fill: none;
+        stroke-linejoin: round;
+      }
+
+      .cls-4, .cls-6 {
+        stroke-width: 3.35px;
+      }
+
+      .cls-2 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .cls-10 {
+        letter-spacing: 0em;
+      }
+
+      .cls-11 {
+        fill: #9ca99c;
+      }
+
+      .cls-5 {
+        stroke: #819683;
+        stroke-width: 4.39px;
+      }
+
+      .cls-12 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-13 {
+        letter-spacing: 0em;
+      }
+
+      .cls-14 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-6 {
+        stroke: #9daa9c;
+        stroke-linecap: square;
+      }
+
+      .cls-3 {
+        font-family: AdobeCleanUX-Regular, 'Adobe Clean UX';
+      }
+
+      .cls-15 {
+        letter-spacing: .02em;
+      }
+
+      .cls-16 {
+        letter-spacing: .02em;
+      }
+
+      .cls-17 {
+        letter-spacing: .02em;
+      }
+
+      .cls-18 {
+        letter-spacing: .01em;
+      }
+
+      .cls-19 {
+        letter-spacing: .04em;
+      }
+
+      .cls-20 {
+        letter-spacing: 0em;
+      }
+
+      .cls-21 {
+        letter-spacing: 0em;
+      }
+
+      .cls-22 {
+        letter-spacing: 0em;
+      }
+
+      .cls-23 {
+        letter-spacing: 0em;
+      }
+
+      .cls-24 {
+        letter-spacing: .01em;
+      }
+
+      .cls-25 {
+        letter-spacing: .01em;
+      }
+
+      .cls-26 {
+        letter-spacing: 0em;
+      }
+
+      .cls-27 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g id="Generative_Object" data-name="Generative Object">
+    <g>
+      <path class="cls-11" d="M44.65,36.13l-6.17-5.94c3.51-4.44,8.01-7.82,13.2-9.94,13.87-5.85,30.42-1.96,39.87,9.97l-6.2,5.93c-5.5-6.54-13.69-9.95-22.19-9.43-7.21.54-13.86,3.83-18.52,9.41Z"/>
+      <path class="cls-11" d="M70.01,53.98c.21,2.5-1.53,4.65-3.89,5.18s-4.88-.71-5.76-2.96c-1.12-2.86.48-5.88,3.42-6.62s5.97,1.25,6.23,4.4Z"/>
+    </g>
+    <g>
+      <path class="cls-4" d="M73.36,46.55c-2.19-2.37-5.27-3.82-8.56-3.73s-6.41,1.7-8.44,4.25"/>
+      <path class="cls-6" d="M50.46,41.35c3.59-3.89,8.32-6.27,13.8-6.48s11.44,2,14.83,6.11"/>
+      <path class="cls-5" d="M34.05,25.08c7.34-9.04,17.1-13.82,28.6-14.72l5.14.08c11.25.18,21.46,6.05,28.3,14.74l5.93-5.83-3.69-3.98C79.17-3.08,47.16-2.05,29.52,17.81l-1.22,1.67,5.75,5.61Z"/>
+    </g>
+  </g>
+  <text class="cls-2" transform="translate(17.61 86.19)"><tspan x="0" y="0">WIFI </tspan><tspan class="cls-14" x="24.28" y="0">A</tspan><tspan class="cls-13" x="31.48" y="0">cc</tspan><tspan x="42.08" y="0">ess </tspan><tspan class="cls-23" x="60.14" y="0">D</tspan><tspan x="68.18" y="0">etails</tspan></text>
+  <g id="WifiNetworkPasswordBlock">
+    <text class="cls-1" transform="translate(.84 160.7)"><tspan class="cls-12" x="0" y="0">P</tspan><tspan class="cls-22" x="6.59" y="0">a</tspan><tspan class="cls-18" x="12.7" y="0">s</tspan><tspan class="cls-21" x="17.81" y="0">s</tspan><tspan class="cls-23" x="22.81" y="0">w</tspan><tspan x="31.74" y="0">o</tspan><tspan class="cls-27" x="38.34" y="0">rd</tspan><tspan x="49.46" y="0">:</tspan></text>
+    <text id="WifiNetworkPasswordValue" class="cls-3" transform="translate(1.9 175.36)"><tspan x="0" y="0">**</tspan><tspan class="cls-8" x="9.58" y="0">N</tspan><tspan class="cls-17" x="17.57" y="0">E</tspan><tspan class="cls-19" x="23.87" y="0">T</tspan><tspan class="cls-10" x="30.54" y="0">WORK_</tspan><tspan class="cls-15" x="68.57" y="0">P</tspan><tspan class="cls-9" x="75.26" y="0">W**</tspan></text>
+  </g>
+  <g id="WifiNetworkNameBlock">
+    <text class="cls-1" transform="translate(0 127.54)"><tspan class="cls-13" x="0" y="0">N</tspan><tspan class="cls-24" x="8.11" y="0">e</tspan><tspan class="cls-16" x="14.36" y="0">t</tspan><tspan class="cls-23" x="18.58" y="0">w</tspan><tspan x="27.5" y="0">o</tspan><tspan class="cls-25" x="34.1" y="0">r</tspan><tspan x="38.57" y="0">k </tspan><tspan class="cls-14" x="47.6" y="0">N</tspan><tspan x="55.64" y="0">am</tspan><tspan class="cls-20" x="71.79" y="0">e</tspan><tspan x="77.96" y="0">:</tspan></text>
+    <text id="WifiNetworkNameValue" class="cls-3" transform="translate(1.06 142.2)"><tspan x="0" y="0">**</tspan><tspan class="cls-26" x="9.58" y="0">S</tspan><tspan x="15.47" y="0">S</tspan><tspan class="cls-7" x="21.24" y="0">I</tspan><tspan x="24.35" y="0">D**</tspan></text>
+  </g>
+</svg>

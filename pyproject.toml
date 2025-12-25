@@ -1,0 +1,11 @@
+[project]
+name = "wificardmkr"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "lxml>=6.0.2",
+    "reportlab>=4.4.7",
+    "svglib>=1.6.0",
+]

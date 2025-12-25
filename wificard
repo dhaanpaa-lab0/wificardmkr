@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# WiFi Card Maker - Shell Wrapper
+# Convenient wrapper to run the WiFi card generator
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Change to the script directory to ensure relative paths work
+cd "$SCRIPT_DIR" || exit 1
+
+# Run the Python script using uv
+exec uv run python generate_card.py "$@"
