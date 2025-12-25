@@ -71,9 +71,9 @@ def generate_qr_code(network_name: str, password: str) -> etree.Element:
     # Generate QR code with high error correction
     qr = segno.make(wifi_string, error='h')
 
-    # Generate SVG output with smaller scale for more compact QR code
+    # Generate SVG output with compact scale for phone screen compatibility
     buffer = BytesIO()
-    qr.save(buffer, kind='svg', scale=2, border=0, xmldecl=False, svgns=False)
+    qr.save(buffer, kind='svg', scale=1, border=0, xmldecl=False, svgns=False)
     buffer.seek(0)
 
     # Parse the generated SVG
@@ -86,11 +86,11 @@ def generate_qr_code(network_name: str, password: str) -> etree.Element:
 
     # Calculate positioning (centered horizontally at bottom of card)
     # Card width with 0.20 inch side margins: 123.43 units
-    # QR width with scale=2: 66 units
+    # QR width with scale=1: 66 units
     # Center x position: (123.43 - 66) / 2 = 28.72
-    # Position at y=180 (below password field which is at y~154, giving ~26 units gap)
+    # Position at y=169 (below password field at y~154, 15 units gap for compact layout)
     qr_x = 28.72
-    qr_y = 180
+    qr_y = 169
 
     # Extract paths from QR SVG and add to group
     # Note: segno generates paths without namespace when svgns=False
@@ -137,7 +137,7 @@ def add_instruction_text(root) -> None:
     text_element = etree.Element('text')
     text_element.set('id', 'qr-instructions')
     text_element.set('x', '61.72')  # Center horizontally (123.43 / 2)
-    text_element.set('y', '316.31')  # 0.15 inch (4.31 units) below QR code (ends at 312)
+    text_element.set('y', '239.31')  # 0.15 inch (4.31 units) below QR code (ends at 235)
     text_element.set('text-anchor', 'middle')  # Center alignment
     text_element.set('font-family', 'Arial, sans-serif')
     text_element.set('font-size', '7')
@@ -223,12 +223,12 @@ def generate_card(network_name: str, network_wifi_password: str, file_name: str)
             # Original width: 111.95, new width: 123.43
             parts[2] = '123.43'
 
-            # Change height to accommodate QR code and instructions with margins
-            # Password field at y~154, QR at y=180 with scale(2) making it 132 units tall
-            # QR ends at 312, instructions at y=316.31, text ends at ~333
-            # 2 inches bottom margin ≈ 57.4 units
-            # New height: 333 + 57.4 ≈ 390
-            parts[3] = '390'
+            # Change height for compact layout (fits iPhone screen without scrolling)
+            # Password field at y~154, QR at y=169 with scale(1) = 66 units tall
+            # QR ends at 235, instructions at y=239.31, text ends at ~255
+            # Compact bottom margin: 20 units
+            # Total height: 255 + 20 = 275 units (2.87 inches - fits phone screen)
+            parts[3] = '275'
             root.set('viewBox', ' '.join(parts))
 
     # Generate and insert QR code
